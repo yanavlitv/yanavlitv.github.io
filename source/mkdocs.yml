@@ -6,15 +6,9 @@ copyright: "2026 - Портфолио студента"
 theme:
   name: material
   palette:
-    - scheme: default
-      primary: teal
-      accent: teal
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
     - scheme: slate
       primary: teal
-      accent: teal
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -31,8 +25,12 @@ nav:
 
 markdown_extensions:
   - admonition
+  - attr_list
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.tabbed
   - pymdownx.emoji
+
+extra_css:
+  - stylesheets/images.css
