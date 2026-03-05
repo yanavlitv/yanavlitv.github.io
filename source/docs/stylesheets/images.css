@@ -1,0 +1,50 @@
+/* Стили для изображений в портфолио */
+
+/* Маленькие картинки (для иконок) */
+.img-small {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Средние картинки (для фото в профиле) */
+.img-medium {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Большие картинки (для скриншотов) */
+.img-large {
+    width: 600px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Картинки по центру */
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* Круглые картинки (для аватарок) */
+.img-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #7b1fa2;
+}
+
+/* Картинки с подписями */
+.img-caption {
+    width: 500px;
+    height: auto;
+    border-bottom: 2px solid #7b1fa2;
+    margin-bottom: 10px;
+}
