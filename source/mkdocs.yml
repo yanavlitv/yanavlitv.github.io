@@ -1,6 +1,7 @@
-site_name: Мое портфолио
+site_name: Портфолио Яны
 site_author: Яна Литвиновская
-copyright: "2026 - Портфолио студента
+site_url: https://yanavlitv.github.io/
+copyright: "2026 - Портфолио студента"
 
 theme:
   name: material
@@ -32,3 +33,6 @@ markdown_extensions:
   - admonition
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.emoji
