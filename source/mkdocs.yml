@@ -28,6 +28,7 @@ nav:
   - Об авторе: about.md
   - Лабораторные работы:
       - Лабораторная 1: labs/lab1.md
+      - Лабораторная 2: labs/lab2.md
 
 markdown_extensions:
   - attr_list
