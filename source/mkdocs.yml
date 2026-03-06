@@ -6,12 +6,18 @@ copyright: "2026 - Портфолио студента"
 theme:
   name: material
   palette:
-    - scheme: slate
-      primary: teal
-      accent: pink
+    - scheme: default
+      primary: deep purple  # Основной цвет
+      accent: purple        # Цвет акцентов
       toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+        icon: material/weather-sunny
+        name: Переключить на темную тему
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Переключить на светлую тему
   features:
     - navigation.tabs
     - navigation.top
@@ -24,13 +30,11 @@ nav:
       - Лабораторная 1: labs/lab1.md
 
 markdown_extensions:
-  - admonition
   - attr_list
-  - pymdownx.highlight
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.tabbed
-  - pymdownx.emoji
+  - pymdownx.highlight
 
 extra_css:
   - stylesheets/images.css

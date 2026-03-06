@@ -6,7 +6,7 @@
 - **Курс:** 1
 - **Направление:** Нейротех
 
-![Картинка котенка](https://avatars.mds.yandex.net/i?id=e68500ca6444af3b222b4b513b19af0a_l-2465206-images-thumbs&n=13) { .img-medium }
+![Картинка котенка](https://avatars.mds.yandex.net/i?id=e68500ca6444af3b222b4b513b19af0a_l-2465206-images-thumbs&n=13){ .img-medium }
 
 ## О себе
 Студентка, молоденькая.
