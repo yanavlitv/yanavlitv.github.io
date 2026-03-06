@@ -8,7 +8,7 @@ theme:
   palette:
     - scheme: slate
       primary: teal
-      accent: blue
+      accent: pink
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
