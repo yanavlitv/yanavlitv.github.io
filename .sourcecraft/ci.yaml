@@ -1,0 +1,24 @@
+on:
+  push:
+    - workflows: [build-mkdocs-site]
+      filter:
+        branches: ["main"]
+
+workflows:
+  build-mkdocs-site:
+    tasks:
+      - name: build-and-deploy
+
+tasks:
+  - name: build-and-deploy
+    cubes:
+      - name: install-mkdocs
+        image: python:3.11-slim
+        script:
+          - pip install mkdocs
+          - mkdocs build --site-dir public
+
+      - name: deploy-pages
+        script:
+          - cp -r public/* .
+          - rm -rf public
