@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#no2-numpy" class="md-skip">
           Skip to content
         </a>
       
@@ -448,6 +448,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -489,6 +491,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -696,6 +700,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -886,9 +892,7 @@
 
 
 
-  <h1>Лабораторная 2</h1>
-
-<p>~~# Лабораторная работа №2: Основы NumPy: массивы и векторные операции</p>
+<h1 id="no2-numpy">Лабораторная работа №2: Основы NumPy: массивы и векторные операции</h1>
 <h2 id="_1">Описание задачи</h2>
 <p>Разработать набор функций для численных вычислений и анализа данных с использованием библиотеки NumPy. Основные задачи включают:</p>
 <ol>
@@ -906,291 +910,291 @@
 <h2 id="_2">Решение</h2>
 <h3 id="1">1. Создание и обработка массивов</h3>
 <p>Для создания массивов использовались функции <code>np.arange()</code> и <code>np.random.rand()</code>. Транспонирование выполнено через <code>.T</code>, изменение формы через <code>.reshape()</code>.</p>
-<div class="highlight"><pre><span></span><code>def create_vector():
-    &quot;&quot;&quot;
-    Создать массив от 0 до 9.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_vector</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Создать массив от 0 до 9.</span>
 
-    Returns:
-        numpy.ndarray: Массив чисел от 0 до 9 включительно
-    &quot;&quot;&quot;
-    return np.arange(10)
-
-
-def create_matrix():
-    &quot;&quot;&quot;
-    Создать матрицу 5x5 со случайными числами [0,1].
-
-    Returns:
-        numpy.ndarray: Матрица 5x5 со случайными значениями от 0 до 1
-    &quot;&quot;&quot;
-    return np.random.rand(5, 5)
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Массив чисел от 0 до 9 включительно</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 
-def reshape_vector(vec):
-    &quot;&quot;&quot;
-    Преобразовать (10,) -&gt; (2,5)
+<span class="k">def</span><span class="w"> </span><span class="nf">create_matrix</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Создать матрицу 5x5 со случайными числами [0,1].</span>
 
-    Args:
-        vec (numpy.ndarray): Входной массив формы (10,)
-
-    Returns:
-        numpy.ndarray: Преобразованный массив формы (2, 5)
-    &quot;&quot;&quot;
-    return vec.reshape(2, 5)
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Матрица 5x5 со случайными значениями от 0 до 1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 
-def transpose_matrix(mat):
-    &quot;&quot;&quot;
-    Транспонирование матрицы.
+<span class="k">def</span><span class="w"> </span><span class="nf">reshape_vector</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Преобразовать (10,) -&gt; (2,5)</span>
 
-    Args:
-        mat (numpy.ndarray): Входная матрица
+<span class="sd">    Args:</span>
+<span class="sd">        vec (numpy.ndarray): Входной массив формы (10,)</span>
 
-    Returns:
-        numpy.ndarray: Транспонированная матрица
-    &quot;&quot;&quot;
-    return mat.T
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Преобразованный массив формы (2, 5)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">vec</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">transpose_matrix</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Транспонирование матрицы.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mat (numpy.ndarray): Входная матрица</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Транспонированная матрица</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">mat</span><span class="o">.</span><span class="n">T</span>
 </code></pre></div>
 <h3 id="2">2. Векторные операции</h3>
 <p>Все операции выполняются поэлементно без использования циклов, благодаря векторизации в NumPy.~~</p>
-<div class="highlight"><pre><span></span><code>def vector_add(a, b):
-    &quot;&quot;&quot;
-    Сложение векторов одинаковой длины.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">vector_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Сложение векторов одинаковой длины.</span>
 
-    Args:
-        a (numpy.ndarray): Первый вектор
-        b (numpy.ndarray): Второй вектор
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Первый вектор</span>
+<span class="sd">        b (numpy.ndarray): Второй вектор</span>
 
-    Returns:
-        numpy.ndarray: Результат поэлементного сложения
-    &quot;&quot;&quot;
-    return a + b
-
-
-def scalar_multiply(vec, scalar):
-    &quot;&quot;&quot;
-    Умножение вектора на число.
-
-    Args:
-        vec (numpy.ndarray): Входной вектор
-        scalar (float/int): Число для умножения
-
-    Returns:
-        numpy.ndarray: Результат умножения вектора на скаляр
-    &quot;&quot;&quot;
-    return vec * scalar
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Результат поэлементного сложения</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 
-def elementwise_multiply(a, b):
-    &quot;&quot;&quot;
-    Поэлементное умножение.
+<span class="k">def</span><span class="w"> </span><span class="nf">scalar_multiply</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Умножение вектора на число.</span>
 
-    Args:
-        a (numpy.ndarray): Первый вектор/матрица
-        b (numpy.ndarray): Второй вектор/матрица
+<span class="sd">    Args:</span>
+<span class="sd">        vec (numpy.ndarray): Входной вектор</span>
+<span class="sd">        scalar (float/int): Число для умножения</span>
 
-    Returns:
-        numpy.ndarray: Результат поэлементного умножения
-    &quot;&quot;&quot;
-    return a * b
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Результат умножения вектора на скаляр</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">vec</span> <span class="o">*</span> <span class="n">scalar</span>
 
 
-def dot_product(a, b):
-    &quot;&quot;&quot;
-    Скалярное произведение.
+<span class="k">def</span><span class="w"> </span><span class="nf">elementwise_multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Поэлементное умножение.</span>
 
-    Args:
-        a (numpy.ndarray): Первый вектор
-        b (numpy.ndarray): Второй вектор
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Первый вектор/матрица</span>
+<span class="sd">        b (numpy.ndarray): Второй вектор/матрица</span>
 
-    Returns:
-        float: Скалярное произведение векторов
-    &quot;&quot;&quot;
-    return np.dot(a, b)
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Результат поэлементного умножения</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dot_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Скалярное произведение.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Первый вектор</span>
+<span class="sd">        b (numpy.ndarray): Второй вектор</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Скалярное произведение векторов</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="3">3. Матричные операции</h3>
 <p>Для матричных операций использовались функции из модуля numpy.linalg.
-<div class="highlight"><pre><span></span><code>def matrix_multiply(a, b):
-    &quot;&quot;&quot;
-    Умножение матриц.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">matrix_multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Умножение матриц.</span>
 
-    Args:
-        a (numpy.ndarray): Первая матрица
-        b (numpy.ndarray): Вторая матрица
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Первая матрица</span>
+<span class="sd">        b (numpy.ndarray): Вторая матрица</span>
 
-    Returns:
-        numpy.ndarray: Результат умножения матриц
-    &quot;&quot;&quot;
-    return a @ b
-
-
-def matrix_determinant(a):
-    &quot;&quot;&quot;
-    Определитель матрицы.
-
-    Args:
-        a (numpy.ndarray): Квадратная матрица
-
-    Returns:
-        float: Определитель матрицы
-    &quot;&quot;&quot;
-    return np.linalg.det(a)
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Результат умножения матриц</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
 
 
-def matrix_inverse(a):
-    &quot;&quot;&quot;
-    Обратная матрица.
+<span class="k">def</span><span class="w"> </span><span class="nf">matrix_determinant</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Определитель матрицы.</span>
 
-    Args:
-        a (numpy.ndarray): Квадратная матрица
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Квадратная матрица</span>
 
-    Returns:
-        numpy.ndarray: Обратная матрица
-    &quot;&quot;&quot;
-    return np.linalg.inv(a)
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Определитель матрицы</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 
-def solve_linear_system(a, b):
-    &quot;&quot;&quot;
-    Решить систему Ax = b
+<span class="k">def</span><span class="w"> </span><span class="nf">matrix_inverse</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Обратная матрица.</span>
 
-    Args:
-        a (numpy.ndarray): Матрица коэффициентов A
-        b (numpy.ndarray): Вектор свободных членов b
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Квадратная матрица</span>
 
-    Returns:
-        numpy.ndarray: Решение системы x
-    &quot;&quot;&quot;
-    return np.linalg.solve(a, b)
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Обратная матрица</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">solve_linear_system</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Решить систему Ax = b</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a (numpy.ndarray): Матрица коэффициентов A</span>
+<span class="sd">        b (numpy.ndarray): Вектор свободных членов b</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Решение системы x</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </code></pre></div></p>
 <h3 id="4">4. Статистический анализ</h3>
 <p>Для анализа данных использовались статистические функции NumPy.</p>
-<div class="highlight"><pre><span></span><code>def load_dataset(path=&quot;data/students_scores.csv&quot;):
-    &quot;&quot;&quot;
-    Загрузить CSV и вернуть NumPy массив.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_dataset</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;data/students_scores.csv&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Загрузить CSV и вернуть NumPy массив.</span>
 
-    Args:
-        path (str): Путь к CSV файлу
+<span class="sd">    Args:</span>
+<span class="sd">        path (str): Путь к CSV файлу</span>
 
-    Returns:
-        numpy.ndarray: Загруженные данные в виде массива
-    &quot;&quot;&quot;
-    return pd.read_csv(path).to_numpy()
-
-
-def statistical_analysis(data):
-    &quot;&quot;&quot;
-    Статистический анализ данных.
-
-    Args:
-        data (numpy.ndarray): Одномерный массив данных
-
-    Returns:
-        dict: Словарь со статистическими показателями
-    &quot;&quot;&quot;
-    return {
-        &quot;mean&quot;: np.mean(data),
-        &quot;median&quot;: np.median(data),
-        &quot;std&quot;: np.std(data),
-        &quot;min&quot;: np.min(data),
-        &quot;max&quot;: np.max(data),
-        &quot;25_percentile&quot;: np.percentile(data, 25),
-        &quot;75_percentile&quot;: np.percentile(data, 75)
-    }
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Загруженные данные в виде массива</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 
 
-def normalize_data(data):
-    &quot;&quot;&quot;
-    Min-Max нормализация.
+<span class="k">def</span><span class="w"> </span><span class="nf">statistical_analysis</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Статистический анализ данных.</span>
 
-    Формула: (x - min) / (max - min)
+<span class="sd">    Args:</span>
+<span class="sd">        data (numpy.ndarray): Одномерный массив данных</span>
 
-    Args:
-        data (numpy.ndarray): Входной массив данных
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Словарь со статистическими показателями</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;mean&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="s2">&quot;median&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="s2">&quot;std&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="s2">&quot;min&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="s2">&quot;max&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="s2">&quot;25_percentile&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span>
+        <span class="s2">&quot;75_percentile&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    Returns:
-        numpy.ndarray: Нормализованный массив данных в диапазоне [0, 1]
-    &quot;&quot;&quot;
-    min_val = np.min(data)
-    max_val = np.max(data)
 
-    # Избегаем деления на ноль
-    if max_val - min_val == 0:
-        return np.zeros_like(data)
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Min-Max нормализация.</span>
 
-    return (data - min_val) / (max_val - min_val)
+<span class="sd">    Формула: (x - min) / (max - min)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (numpy.ndarray): Входной массив данных</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Нормализованный массив данных в диапазоне [0, 1]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">min_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1"># Избегаем деления на ноль</span>
+    <span class="k">if</span> <span class="n">max_val</span> <span class="o">-</span> <span class="n">min_val</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">min_val</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_val</span> <span class="o">-</span> <span class="n">min_val</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="5">5. Визуализация</h3>
 <p>Для визуализации использовались библиотеки matplotlib и seaborn с безголовым режимом (Agg backend) для работы в тестовой среде.
-<div class="highlight"><pre><span></span><code>def plot_histogram(data):
-    &quot;&quot;&quot;
-    Построить гистограмму распределения оценок.
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">plot_histogram</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Построить гистограмму распределения оценок.</span>
 
-    Args:
-        data (numpy.ndarray): Данные для гистограммы
-    &quot;&quot;&quot;
-    os.makedirs(&#39;plots&#39;, exist_ok=True)
+<span class="sd">    Args:</span>
+<span class="sd">        data (numpy.ndarray): Данные для гистограммы</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;plots&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    plt.hist(data)
-    plt.title(&#39;Оценки&#39;)
-    plt.savefig(&#39;plots/histogram.png&#39;)
-    plt.close()
-
-
-def plot_heatmap(matrix):
-    &quot;&quot;&quot;
-    Построить тепловую карту корреляции предметов.
-
-    Args:
-        matrix (numpy.ndarray): Матрица корреляции
-    &quot;&quot;&quot;
-    os.makedirs(&#39;plots&#39;, exist_ok=True)
-
-    sns.heatmap(matrix)
-    plt.title(&#39;Корреляция&#39;)
-    plt.savefig(&#39;plots/heat.png&#39;)
-    plt.close()
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Оценки&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plots/histogram.png&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 
-def plot_line(x, y):
-    &quot;&quot;&quot;
-    Построить график зависимости: студент -&gt; оценка по математике.
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_heatmap</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Построить тепловую карту корреляции предметов.</span>
 
-    Args:
-        x (numpy.ndarray): Номера студентов
-        y (numpy.ndarray): Оценки студентов
-    &quot;&quot;&quot;
-    os.makedirs(&#39;plots&#39;, exist_ok=True)
+<span class="sd">    Args:</span>
+<span class="sd">        matrix (numpy.ndarray): Матрица корреляции</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;plots&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    plt.plot(x, y)
-    plt.title(&#39;Оценки студентов&#39;)
-    plt.savefig(&#39;plots/line.png&#39;)
-    plt.close()
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Корреляция&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plots/heat.png&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Построить график зависимости: студент -&gt; оценка по математике.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x (numpy.ndarray): Номера студентов</span>
+<span class="sd">        y (numpy.ndarray): Оценки студентов</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;plots&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Оценки студентов&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plots/line.png&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="_3">Результаты тестирования</h3>
 <p>Все функции прошли тесты успешно. Результаты выполнения тестов:
-<div class="highlight"><pre><span></span><code>========================= test session starts =========================
-collected 17 items
+<div class="highlight"><pre><span></span><code><span class="o">=========================</span> <span class="n">test</span> <span class="n">session</span> <span class="n">starts</span> <span class="o">=========================</span>
+<span class="n">collected</span> <span class="mi">17</span> <span class="n">items</span>
 
-test.py::test_create_vector PASSED                               [  5%]
-test.py::test_create_matrix PASSED                               [ 11%]
-test.py::test_reshape_vector PASSED                              [ 17%]
-test.py::test_vector_add PASSED                                  [ 23%]
-test.py::test_scalar_multiply PASSED                             [ 29%]
-test.py::test_elementwise_multiply PASSED                        [ 35%]
-test.py::test_dot_product PASSED                                 [ 41%]
-test.py::test_matrix_multiply PASSED                             [ 47%]
-test.py::test_matrix_determinant PASSED                          [ 52%]
-test.py::test_matrix_inverse PASSED                              [ 58%]
-test.py::test_solve_linear_system PASSED                         [ 64%]
-test.py::test_load_dataset PASSED                                [ 70%]
-test.py::test_statistical_analysis PASSED                        [ 76%]
-test.py::test_normalization PASSED                               [ 82%]
-test.py::test_plot_histogram PASSED                              [ 88%]
-test.py::test_plot_heatmap PASSED                                [ 94%]
-test.py::test_plot_line PASSED                                   [100%]
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_create_vector</span> <span class="n">PASSED</span>                               <span class="p">[</span>  <span class="mi">5</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_create_matrix</span> <span class="n">PASSED</span>                               <span class="p">[</span> <span class="mi">11</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_reshape_vector</span> <span class="n">PASSED</span>                              <span class="p">[</span> <span class="mi">17</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_vector_add</span> <span class="n">PASSED</span>                                  <span class="p">[</span> <span class="mi">23</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_scalar_multiply</span> <span class="n">PASSED</span>                             <span class="p">[</span> <span class="mi">29</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_elementwise_multiply</span> <span class="n">PASSED</span>                        <span class="p">[</span> <span class="mi">35</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_dot_product</span> <span class="n">PASSED</span>                                 <span class="p">[</span> <span class="mi">41</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_matrix_multiply</span> <span class="n">PASSED</span>                             <span class="p">[</span> <span class="mi">47</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_matrix_determinant</span> <span class="n">PASSED</span>                          <span class="p">[</span> <span class="mi">52</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_matrix_inverse</span> <span class="n">PASSED</span>                              <span class="p">[</span> <span class="mi">58</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_solve_linear_system</span> <span class="n">PASSED</span>                         <span class="p">[</span> <span class="mi">64</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_load_dataset</span> <span class="n">PASSED</span>                                <span class="p">[</span> <span class="mi">70</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_statistical_analysis</span> <span class="n">PASSED</span>                        <span class="p">[</span> <span class="mi">76</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_normalization</span> <span class="n">PASSED</span>                               <span class="p">[</span> <span class="mi">82</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_plot_histogram</span> <span class="n">PASSED</span>                              <span class="p">[</span> <span class="mi">88</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_plot_heatmap</span> <span class="n">PASSED</span>                                <span class="p">[</span> <span class="mi">94</span><span class="o">%</span><span class="p">]</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span><span class="p">::</span><span class="n">test_plot_line</span> <span class="n">PASSED</span>                                   <span class="p">[</span><span class="mi">100</span><span class="o">%</span><span class="p">]</span>
 
-========================= 17 passed in 2.34s =========================
+<span class="o">=========================</span> <span class="mi">17</span> <span class="n">passed</span> <span class="ow">in</span> <span class="mf">2.34</span><span class="n">s</span> <span class="o">=========================</span>
 </code></pre></div></p>
 <h3 id="_4">Визуализация результатов</h3>
 <h4 id="_5">Гистограмма распределения оценок</h4>
