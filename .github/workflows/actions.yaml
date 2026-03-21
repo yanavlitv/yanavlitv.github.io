@@ -1,12 +1,10 @@
-
-
 name: Deploy MkDocs Site
 
 on:
   push:
     branches:
-      - main  # или другая основная ветка
-  workflow_dispatch:  # ручная активация через интерфейс GitHub
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,4 +21,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CONFIG_FILE: source/mkdocs.yml
-          #REQUIREMENTS: requirements.txt
+          # REQUIREMENTS: requirements.txt  # закомментировано, т.к. файла нет
