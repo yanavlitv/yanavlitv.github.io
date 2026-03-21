@@ -1,24 +1,28 @@
 on:
   push:
-    - workflows: [build-mkdocs-site]
+    - workflows: [build-and-deploy]
       filter:
         branches: ["main"]
 
 workflows:
-  build-mkdocs-site:
+  build-and-deploy:
     tasks:
-      - name: build-and-deploy
+      - name: build-job
 
 tasks:
-  - name: build-and-deploy
+  - name: build-job
     cubes:
       - name: install-mkdocs
         image: python:3.11-slim
         script:
           - pip install mkdocs
-          - mkdocs build --site-dir public
+          - mkdocs build --site-dir site
 
-      - name: deploy-pages
+      # Этот кубик делает коммит собранного сайта в репозиторий
+      - name: commit-site
         script:
-          - cp -r public/* .
-          - rm -rf public
+          - git config user.email "ci@sourcecraft.dev"
+          - git config user.name "CI Bot"
+          - git add site/
+          - git commit -m "Update built site" || echo "No changes to commit"
+          - git push origin main
